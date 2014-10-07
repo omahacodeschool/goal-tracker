@@ -33,6 +33,8 @@ gem 'dotenv-rails', :groups => [:development, :test]
 # Use unicorn as the app server
 gem 'unicorn'
 
+gem "sorcery"
+
 # Deploy with Capistrano
 # gem 'capistrano'
 
