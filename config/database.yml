@@ -17,8 +17,6 @@ development:
   encoding: unicode
   database: goal-tracker_development
   pool: 5
-  username: goal-tracker
-  password:
 
   # Connect on a TCP socket. Omitted by default since the client uses a
   # domain socket that doesn't need configuration. Windows does not have
@@ -43,13 +41,9 @@ test:
   encoding: unicode
   database: goal-tracker_test
   pool: 5
-  username: goal-tracker
-  password:
 
 production:
   adapter: postgresql
   encoding: unicode
   database: goal-tracker_production
   pool: 5
-  username: goal-tracker
-  password:
