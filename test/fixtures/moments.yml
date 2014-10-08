@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  moment_value: 1
+  goal_id: 1
+
+two:
+  moment_value: 1
+  goal_id: 1
