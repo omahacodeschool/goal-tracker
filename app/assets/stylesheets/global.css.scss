@@ -5,19 +5,31 @@ $dark: #515150;
 
 $font: Helvetica, arial, sans-serif;
 
-body {
-  background-color: $gray;
-  font-family: $font;
-  color: $dark;
+.clearfix:after {
+   content: " "; /* Older browser do not support empty content */
+   visibility: hidden;
+   display: block;
+   height: 0;
+   clear: both;
 }
 
 header {
   background-color: $gray;
-  height: 150px;
+  height: 130px;
   border-bottom: solid;
   border-color: $orange;
   border-width: 3px;
+  padding-top: 20px;
 }
+  #nav {
+    float: right;
+    margin: 0 20px 0 0;
+  }
+  
+  .logo {
+    float: left;
+    margin: 0 0 0 20px;
+  }
 
 footer {
   background-color: $gray;
@@ -27,5 +39,25 @@ footer {
   border-width: 3px;
 }
 
+body, table th, table td {
+  font-family: $font;
+  color: $dark;
+}
+
+table th, table td {
+  padding: 10px;
+}
+
+.userListing {
+  background-color: $gray;
+  min-height: 500px;
+  padding: 20px 0 0 20px;
+}
+
+a {
+  text-decoration: none;
+  border-bottom: 2px $teal dotted;
+  color: $teal;
+}
 
 

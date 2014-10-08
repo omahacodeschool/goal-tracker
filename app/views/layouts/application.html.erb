@@ -6,10 +6,10 @@
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
-<header>
-</header>
-  <body>
-
+<header class="clearfix">
+  <div class="logo">
+  </div>
+  
   <div id="nav">
     <% if current_user %>
       <%= link_to "Edit Profile", edit_user_path(current_user.id) %>
@@ -19,11 +19,16 @@
       <%= link_to "Login", :login %>
     <% end %>
   </div>
+  
   <div>
     <p id="notice"><%= flash[:notice] %></p>
     <p id="alert"><%= flash[:alert] %></p>
   </div>
-  <%= yield %>
+  
+</header>
+  <body>
+
+    <%= yield %>
 
   </body>
 
