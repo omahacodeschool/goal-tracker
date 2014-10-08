@@ -46,7 +46,10 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
-        auto_login(@user) # Doesn't having to log in after signing up
+        
+        TrackerMailer.welcome(@user).deliver
+        
+        auto_login(@user)
         format.html { redirect_to users_path, notice: 'User was successfully created.' }
         format.json { render json: @user, status: :created, location: @user }
       else
@@ -77,6 +80,7 @@ class UsersController < ApplicationController
   def destroy
     @user = User.find(params[:id])
     @user.destroy
+    logout
 
     respond_to do |format|
       format.html { redirect_to users_url }
