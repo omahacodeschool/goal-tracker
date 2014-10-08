@@ -2,7 +2,8 @@ class GoalsController < ApplicationController
   # GET /goals
   # GET /goals.json
   def index
-    @goals = Goal.all
+    @current_user=User.find_by_id(current_user.id)
+    @goals = @current_user.goals
 
     respond_to do |format|
       format.html # index.html.erb
@@ -13,7 +14,8 @@ class GoalsController < ApplicationController
   # GET /goals/1
   # GET /goals/1.json
   def show
-    @goal = Goal.find(params[:id])
+    @current_user=User.find_by_id(params[:user_id])
+    @goal = Goal.find_by_id(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -25,6 +27,7 @@ class GoalsController < ApplicationController
   # GET /goals/new.json
   def new
     @goal = Goal.new
+    @user=User.find_by_id(params[:id])
 
     respond_to do |format|
       format.html # new.html.erb

@@ -1,5 +1,19 @@
 GoalTracker::Application.routes.draw do
 
+  root :to => 'users#index'
+
+  resources :user_sessions
+
+  get "user_sessions/new"
+
+  get "user_sessions/create"
+
+  get "user_sessions/destroy"
+
+  resources :users
+  
+  resources :goals
+  
   get "moments/new"
 
   get "moments/create"
@@ -10,24 +24,16 @@ GoalTracker::Application.routes.draw do
 
   get "moments/destroy"
 
-  resources :goals
-
-
   get 'login' => 'user_sessions#new', :as => :login
   post 'logout' => 'user_sessions#destroy', :as => :logout
 
-  get "user_sessions/new"
-
-  get "user_sessions/create"
-
-  get "user_sessions/destroy"
   
-  root :to => 'users#index'
 
-  resources :user_sessions
-  resources :users
-  resources :users
 
+
+
+
+  
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

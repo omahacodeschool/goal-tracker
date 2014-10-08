@@ -17,7 +17,7 @@
     <td><%= goal.goal_value %></td>
     <td><%= goal.user_id %></td>
     <td><%= goal.completed %></td>
-    <td><%= link_to 'Show', goal %></td>
+    <td><%= link_to 'Show', user_goal_path(current_user.id) %></td>
     <td><%= link_to 'Edit', edit_goal_path(goal) %></td>
     <td><%= link_to 'Destroy', goal, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
