@@ -35,6 +35,8 @@ gem 'unicorn'
 
 gem "sorcery"
 
+gem 'pry-rails', :group => :development
+
 # Deploy with Capistrano
 # gem 'capistrano'
 
