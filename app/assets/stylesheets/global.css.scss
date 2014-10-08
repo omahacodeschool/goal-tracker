@@ -1,0 +1,31 @@
+$gray: #F5F5F5;
+$teal: #54B1C4;
+$orange: #FF8636;
+$dark: #515150;
+
+$font: Helvetica, arial, sans-serif;
+
+body {
+  background-color: $gray;
+  font-family: $font;
+  color: $dark;
+}
+
+header {
+  background-color: $gray;
+  height: 150px;
+  border-bottom: solid;
+  border-color: $orange;
+  border-width: 3px;
+}
+
+footer {
+  background-color: $gray;
+  height: 100px;
+  border-top: solid;
+  border-color: $orange;
+  border-width: 3px;
+}
+
+
+
