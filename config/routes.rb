@@ -1,5 +1,8 @@
 GoalTracker::Application.routes.draw do
 
+  resources :goals
+
+
   get 'login' => 'user_sessions#new', :as => :login
   post 'logout' => 'user_sessions#destroy', :as => :logout
 
