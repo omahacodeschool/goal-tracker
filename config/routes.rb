@@ -1,5 +1,15 @@
 GoalTracker::Application.routes.draw do
 
+  get "moments/new"
+
+  get "moments/create"
+
+  get "moments/edit"
+
+  get "moments/update"
+
+  get "moments/destroy"
+
   resources :goals
 
 
