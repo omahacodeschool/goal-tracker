@@ -1,28 +1,20 @@
 class MomentsController < ApplicationController
   
   def index
-    @moments=Moment.all
+    @moments = Moment.all
   end
   
   def new
-    @moment=Moment.new
+    @moment = Moment.new
   end
 
   def create
-    @moment=Moment.new(params[:moment])
+    @moment = Moment.new(params[:moment])
+    @goal = Goal.find_by_user_id(session[:user_id])
+    @moment.goal_id = @goal.id
     
     if @moment.save
-      redirect_to moments_path
-    else
-      render new
-    end
-  end
-  
-  def create_in_goal
-    @moment=Moment.new(params[:moment])
-    
-    if @moment.save
-      redirect_to goal_path(params[:moment][:goal_id])
+      redirect_to goal_path(@moment.goal_id)
     else
       render goal_path(params[:goal_id])
     end
