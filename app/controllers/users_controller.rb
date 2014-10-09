@@ -15,12 +15,7 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
-    @user = User.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @user }
-    end
+    @user = User.find_by_id(params[:id])
   end
 
   # GET /users/new
@@ -46,8 +41,11 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
-        @user = login(params[:email], params[:password]) # Doesn't having to log in after signing up
-        format.html { redirect_to users_path, notice: 'User was successfully created.' }
+        
+        TrackerMailer.welcome(@user).deliver
+
+        auto_login(@user)
+        format.html { redirect_to goals_path, notice: 'User was successfully created.' }
         format.json { render json: @user, status: :created, location: @user }
       else
         format.html { render action: "new" }
@@ -77,6 +75,7 @@ class UsersController < ApplicationController
   def destroy
     @user = User.find(params[:id])
     @user.destroy
+    logout
 
     respond_to do |format|
       format.html { redirect_to users_url }

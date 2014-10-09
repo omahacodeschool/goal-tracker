@@ -1,4 +1,4 @@
-<p id="notice"><%= notice %></p>
+<!-- <p id="notice"><%= notice %></p> -->
 
 <p>
   <b>Title:</b>
@@ -12,14 +12,29 @@
 
 <p>
   <b>User:</b>
-  <%= @goal.user_id %>
+  <%= current_user.email %>
 </p>
+
+<% if @goal.moments.length > 0 %>
+  <p>Moments</p>
+  <% @goal.moments.reverse.each do |m| %>  <!-- descending -->
+    <p><%= m.moment_value %> - <%= m.created_at %></p>
+  <% end %>
+<% end %>
+
+<br />
+
+<p><b>Create Moment</b></p>
+<%= form_for :moment, :url => "/moments/in_goal", :method => "post", :action => "create_in_goal" do |f| %>
+  <p>
+    <%= f.label :moment_value %>
+    <%= f.number_field :moment_value %>
+    <%= f.hidden_field :goal_id, :value => @goal.id %>
+  </p>
+  <%= f.submit %>
+<% end %>
 
 <p>
-  <b>Completed:</b>
-  <%= @goal.completed %>
+ <%= link_to 'Edit', edit_goal_path(@goal) %> |
+ <%= link_to 'Back', goals_path %> 
 </p>
-
-
-<%= link_to 'Edit', edit_goal_path(@goal) %> |
-<%= link_to 'Back', goals_path %>

@@ -20,12 +20,7 @@
     <%= f.number_field :goal_value %>
   </div>
   <div class="field">
-    <%= f.label :user_id %><br />
-    <%= f.number_field :user_id %>
-  </div>
-  <div class="field">
-    <%= f.label :completed %><br />
-    <%= f.check_box :completed %>
+    <%= f.hidden_field :user_id, {value: current_user.id} %>
   </div>
   <div class="actions">
     <%= f.submit %>
