@@ -24,16 +24,17 @@
     <% end %>
   </div>
   
-  <div>
-    <p id="notice"><%= flash[:notice] %></p>
-    <p id="alert"><%= flash[:alert] %></p>
-  </div>
-  
 </header>
   <body>
+    <div>
+      <p id="notice"><%= flash[:notice] %></p>
+      <p id="alert"><%= flash[:alert] %></p>
+    </div>
+    <div class="content">
 
-    <%= yield %>
-
+      <%= yield %>
+    
+    </div>
   </body>
 
 <footer>  
