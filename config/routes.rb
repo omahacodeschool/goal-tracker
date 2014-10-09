@@ -1,6 +1,6 @@
 GoalTracker::Application.routes.draw do
 
-  root :to => 'users#signup'
+  root :to => 'users#new'
 
   resources :user_sessions
 
