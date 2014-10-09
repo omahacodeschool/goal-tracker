@@ -57,6 +57,23 @@ table th, table td {
   padding: 20px 0 0 20px;
 }
 
+.goalListing {
+  background-color: $gray;
+  min-height: 500px;
+  padding: 20px 0 0 20px;
+}
+
+.editUser {
+  background-color: $gray;
+  min-height: 500px;
+  padding: 20px 0 0 20px;
+}
+.showUser {
+  background-color: $gray;
+  min-height: 500px;
+  padding: 20px 0 0 20px;
+}
+
 a {
   text-decoration: none;
   border-bottom: 2px $teal dotted;
