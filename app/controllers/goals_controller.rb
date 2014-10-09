@@ -16,6 +16,7 @@ class GoalsController < ApplicationController
   def show
     @current_user=User.find_by_id(params[:user_id])
     @goal = Goal.find_by_id(params[:id])
+    @moment = Moment.new
 
     respond_to do |format|
       format.html # show.html.erb
