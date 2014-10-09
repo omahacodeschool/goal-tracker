@@ -14,7 +14,7 @@ class GoalsController < ApplicationController
   # GET /goals/1
   # GET /goals/1.json
   def show
-    @current_user=User.find_by_id(params[:user_id])
+    @current_user=User.find_by_id(current_user.id)
     @goal = Goal.find_by_id(params[:id])
 
     respond_to do |format|

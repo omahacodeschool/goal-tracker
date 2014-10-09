@@ -26,6 +26,7 @@ class MomentsController < ApplicationController
     else
       render goal_path(params[:goal_id])
     end
+    binding.pry
   end
 
   def edit
