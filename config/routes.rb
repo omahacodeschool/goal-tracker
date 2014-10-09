@@ -1,6 +1,6 @@
 GoalTracker::Application.routes.draw do
 
-  root :to => 'users#index'
+  root :to => 'pages#index'
 
   resources :user_sessions
 
@@ -14,13 +14,17 @@ GoalTracker::Application.routes.draw do
   
   resources :goals
   
+  post "moments/in_goal" => 'moments#create_in_goal'
+  
+  get "moments" => 'moments#index', :as => "moments"
+  
   get "moments/new"
 
-  get "moments/create"
+  post "moments" => 'moments#create'
 
   get "moments/edit"
 
-  get "moments/update"
+  put "moments/update"
 
   get "moments/destroy"
 
