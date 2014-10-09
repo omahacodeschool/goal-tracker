@@ -2,8 +2,7 @@ class GoalsController < ApplicationController
   # GET /goals
   # GET /goals.json
   def index
-    @current_user=User.find_by_id(current_user.id)
-    @goals = @current_user.goals
+    @goals = current_user.goals
 
     respond_to do |format|
       format.html # index.html.erb
