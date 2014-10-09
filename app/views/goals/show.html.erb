@@ -15,9 +15,11 @@
   <% end %>
 </div>
 
+
 <div class="createMoment">
 <p><span>Create Moment</span></p>
-<%= form_for :moment, :url => "/moments/in_goal", :method => "post", :action => "create_in_goal" do |f| %>
+<%= form_for @moment do |f| %>
+
   <p>
     <%= f.label :moment_value %>
     <%= f.number_field :moment_value %>
