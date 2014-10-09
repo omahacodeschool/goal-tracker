@@ -20,7 +20,11 @@ header {
   border-color: $orange;
   border-width: 3px;
   padding-top: 20px;
-}
+  
+  span {
+    display: none;
+  }
+  
   #nav {
     float: right;
     margin: 0 20px 0 0;
@@ -33,6 +37,7 @@ header {
     height: 100px;
     background: url('gettin-it-done-logo.png');
   }
+}
 
 footer {
   background-color: $gray;
