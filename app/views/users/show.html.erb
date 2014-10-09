@@ -1,3 +1,4 @@
+<div class="showUser">
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -5,6 +6,13 @@
   <%= @user.email %>
 </p>
 
+<h2>Goals</h2>
+<% @user.goals.each do |g| %>
+  <p>
+    <%= link_to "goal", goal_path(g.id) %> - <%= g.goal_value %>
+  </p>
+<% end %>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
+</div>

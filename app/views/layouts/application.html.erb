@@ -6,7 +6,12 @@
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
-  <body>
+
+<header class="clearfix">
+  <div class="logo">
+  </div>
+
+  <%= session %><br />
 
   <div id="nav">
     <% if current_user %>
@@ -17,11 +22,20 @@
       <%= link_to "Login", :login %>
     <% end %>
   </div>
+  
   <div>
     <p id="notice"><%= flash[:notice] %></p>
     <p id="alert"><%= flash[:alert] %></p>
   </div>
-  <%= yield %>
+  
+</header>
+  <body>
+
+    <%= yield %>
 
   </body>
+
+<footer>  
+</footer>
+
 </html>

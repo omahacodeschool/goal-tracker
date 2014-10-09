@@ -6,6 +6,7 @@ gem 'rails', '3.2.19'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'pg'
+gem 'pry-rails', :group => :development
 
 
 # Gems used only for assets and not required
@@ -34,6 +35,8 @@ gem 'dotenv-rails', :groups => [:development, :test]
 gem 'unicorn'
 
 gem "sorcery"
+
+gem 'pry-rails', :group => :development
 
 # Deploy with Capistrano
 # gem 'capistrano'
