@@ -1,4 +1,4 @@
 class Moment < ActiveRecord::Base
-  attr_accessible :goal_id, :moment_value
+  attr_accessible :moment_value
   belongs_to :goal
 end

@@ -8,6 +8,8 @@ gem 'rails', '3.2.19'
 gem 'pg'
 gem 'pry-rails', :group => :development
 
+gem "delayed_job_web"
+gem 'delayed_job_active_record'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -35,8 +37,6 @@ gem 'dotenv-rails', :groups => [:development, :test]
 gem 'unicorn'
 
 gem "sorcery"
-
-gem 'pry-rails', :group => :development
 
 # Deploy with Capistrano
 # gem 'capistrano'

@@ -5,6 +5,10 @@ $dark: #515150;
 
 $font: Helvetica, arial, sans-serif;
 
+html {
+  background-color: $gray;
+}
+
 .clearfix:after {
    content: " "; /* Older browser do not support empty content */
    visibility: hidden;
@@ -14,28 +18,57 @@ $font: Helvetica, arial, sans-serif;
 }
 
 header {
-  background-color: $gray;
   height: 130px;
   border-bottom: solid;
   border-color: $orange;
   border-width: 3px;
   padding-top: 20px;
-}
+  
+    .title {
+      float: left;
+      border-style: solid;
+      border-width: 1px;
+      width: 75%;
+      h1 {
+        text-align: center;
+        font-family: $font;
+        font-size: 50px;
+      }
+    }
+  
+  span {
+    display: none;
+  }
+  
   #nav {
+    text-align: left;
     float: right;
     margin: 0 20px 0 0;
+    min-width: 100px;
+    max-width: 50%;
+    padding: 0 10px 0 0;
+    p {
+      display: inline;
+    }
   }
   
   .logo {
     float: left;
     margin: 0 0 0 20px;
-    width: 100px;
+    width: 50%;
+    min-width: 100px;
     height: 100px;
     background: url('gettin-it-done-logo.png');
+    background-repeat: no-repeat;
   }
+}
+
+.content {
+  min-height: 400px;
+  padding: 20px 0 0 20px;
+}
 
 footer {
-  background-color: $gray;
   height: 100px;
   border-top: solid;
   border-color: $orange;
@@ -49,29 +82,6 @@ body, table th, table td {
 
 table th, table td {
   padding: 10px;
-}
-
-.userListing {
-  background-color: $gray;
-  min-height: 500px;
-  padding: 20px 0 0 20px;
-}
-
-.goalListing {
-  background-color: $gray;
-  min-height: 500px;
-  padding: 20px 0 0 20px;
-}
-
-.editUser {
-  background-color: $gray;
-  min-height: 500px;
-  padding: 20px 0 0 20px;
-}
-.showUser {
-  background-color: $gray;
-  min-height: 500px;
-  padding: 20px 0 0 20px;
 }
 
 a {
