@@ -82,11 +82,4 @@ class UsersController < ApplicationController
       format.json { head :no_content }
     end
   end
-  
-  private
-
-  def user_params
-    params.require(:user).permit(:email, :password, :password_confirmation)
-  end
-  
 end
