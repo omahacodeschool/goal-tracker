@@ -42,7 +42,7 @@ class UsersController < ApplicationController
     respond_to do |format|
       if @user.save
         
-        TrackerMailer.welcome(@user).deliver
+        TrackerMailer.delay.welcome(@user)
 
         auto_login(@user)
         format.html { redirect_to goals_path, notice: 'User was successfully created.' }

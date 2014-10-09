@@ -29,7 +29,7 @@ GoalTracker::Application.routes.draw do
   get 'login' => 'user_sessions#new', :as => :login
   post 'logout' => 'user_sessions#destroy', :as => :logout
 
-  
+  match "/delayed_job" => DelayedJobWeb, :anchor => false, via: [:get, :post]
 
 
 
