@@ -3,11 +3,11 @@ class Moment < ActiveRecord::Base
   belongs_to :goal
   validates :moment_value, presence: true
   
-  def sum(moments)
-    moments.each do |m|
-      sum += m.moment_value
-    end
-    sum
+  def accumulating_value(moment)
+    goal = moment.goal
+    accum_value = goal.moments.sum(:moment_value)
+    moment.update_column(:accum_value, accum_value)
+    moment.save
   end
   
 end

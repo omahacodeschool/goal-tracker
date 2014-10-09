@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(:version => 20141009180652) do
     t.integer  "goal_id"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
+    t.integer  "accum_value"
   end
 
   create_table "users", :force => true do |t|

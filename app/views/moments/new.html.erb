@@ -10,5 +10,6 @@
     <%= f.label :goal_id %>
     <%= f.text_field :goal_id %>
   </p>
+  <%= f.hidden_field :accum_value, value => (:moment_value + @sum)%>
   <%= f.submit %>
 <% end %>

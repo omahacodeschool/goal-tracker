@@ -22,11 +22,11 @@ class MomentsController < ApplicationController
     @moment=Moment.new(params[:moment])
     
     if @moment.save
+      @moment.accumulating_value(@moment)
       redirect_to goal_path(params[:moment][:goal_id])
     else
       render goal_path(params[:goal_id])
     end
-    binding.pry
   end
 
   def edit
