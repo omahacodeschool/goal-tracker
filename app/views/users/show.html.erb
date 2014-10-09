@@ -2,7 +2,7 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Email:</b>
+  <span>Email:</span>
   <%= @user.email %>
 </p>
 
@@ -13,6 +13,8 @@
   </p>
 <% end %>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<p>
+  <%= link_to 'Edit', edit_user_path(@user) %> |
+  <%= link_to 'Back', users_path %>
+</p>
 </div>
