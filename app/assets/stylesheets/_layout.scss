@@ -32,11 +32,12 @@
   }
 }
 
-.chart {
-  @extend %borderRight;
+#chart {
+  //@extend %borderRight;
   float: left;
-  width: 50%;
   height: 400px;
+  width: 700px;
+  margin-left: 20px;
 }
 
 .moments {
