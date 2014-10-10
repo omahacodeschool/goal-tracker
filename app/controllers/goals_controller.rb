@@ -16,12 +16,11 @@ class GoalsController < ApplicationController
   def show
     @current_user=User.find_by_id(current_user.id)
     @goal = Goal.find_by_id(params[:id])
-    
+    @goal.goal_completed?(@goal)
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @goal }
     end
-    binding.pry
   end
 
   # GET /goals/new
@@ -32,6 +31,7 @@ class GoalsController < ApplicationController
 
     respond_to do |format|
       format.html # new.html.erb
+      binding.pry
       format.json { render json: @goal }
     end
   end
