@@ -4,6 +4,9 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
+    User.delete_all
+    Goal.delete_all
+    Moment.delete_all
     @users = User.all
 
     respond_to do |format|
@@ -74,8 +77,15 @@ class UsersController < ApplicationController
   # DELETE /users/1.json
   def destroy
     @user = User.find(params[:id])
+    @goal = Goal.find_by_user_id(@user.id)
+    if @goal != nil
+      @goal.destroy
+      @moment = Moment.find_by_goal_id(@goal.id)
+      if @moment != nil
+        @moment.destroy
+      end
+    end
     @user.destroy
-    logout
 
     respond_to do |format|
       format.html { redirect_to users_url }
