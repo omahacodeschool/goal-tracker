@@ -10,12 +10,10 @@ class MomentsController < ApplicationController
 
   def create
     @moment = Moment.new(params[:moment])
-    @goal = Goal.find_by_user_id(session[:user_id])
-    @moment.goal_id = @goal.id
     
     if @moment.save
-      redirect_to goal_path(@moment.goal_id)
       @moment.accumulating_value(@moment)
+      redirect_to goal_path(@moment.goal_id)
     else
       render goal_path(params[:goal_id])
     end
