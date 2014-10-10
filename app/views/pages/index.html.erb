@@ -1,10 +1,5 @@
-<h1>Goal Tracker</h1>
-
-<div class="nav">
-  <ul>
-    <li>Signup</li>
-    <li>Login</li>
-  </ul>
+<div class="title">
+  <h1>GOAL TRACKER</h1>
 </div>
 
 <div class="main">
@@ -12,9 +7,15 @@
     <p>Want to loose 20 lbs before Christmas? How about getting over your fear of dogs by meeting 25 in a month? Goal Tracker is here to help. Goal Tracker provides a simple interface that allows you to set goals, add updates, and track your progress. Click the “Get Started” button to create an account or login to continue your quests for self improvement. Lets start “Gettin’ It Done”!</p>
   </div>
 
-  <div class="signup">
-  </div>
+  <div class="homeLinks clearfix">
+    <div class="signup">
+      <p><%= link_to "Register", new_user_path %> </p>
+    </div>
 
-  <div class="login">
+    <div class="login">
+      <div class="loginImage">
+      </div>
+      <p><%= link_to "Login", :login %></p>
+    </div>
   </div>
 </div>

@@ -1,6 +1,8 @@
 @import "normalize";
 @import "settings";
+@import "scaffolds";
 @import "nav";
+@import "layout";
 
 html {
   background-color: $gray;
@@ -52,9 +54,8 @@ header {
   .logo {
     float: left;
     margin: 0 0 0 20px;
-    width: 50%;
     min-width: 100px;
-    height: 100px;
+    min-height: 100px;
     background: url('gettin-it-done-logo.png');
     background-repeat: no-repeat;
   }
@@ -65,6 +66,17 @@ header {
   padding: 20px 0 0 20px;
 }
 
+.title {
+  text-align: center;
+}
+
+.about {
+  margin: 50px auto 50px;
+  max-width: 50%;
+  min-width: 400px;
+  line-height: 25px;
+}
+
 footer {
   height: 100px;
   border-top: solid;
@@ -72,12 +84,15 @@ footer {
   border-width: 3px;
 }
 
-body, table th, table td {
+body, 
+table th, 
+table td {
   font-family: $font;
   color: $dark;
 }
 
-table th, table td {
+table th, 
+table td {
   padding: 10px;
 }
 

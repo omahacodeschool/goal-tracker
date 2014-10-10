@@ -1,6 +1,8 @@
 GoalTracker::Application.routes.draw do
 
   root :to => 'pages#index'
+  
+  get 'dashboard' => 'pages#dashboard'
 
   resources :user_sessions
 

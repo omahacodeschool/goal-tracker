@@ -1,0 +1,28 @@
+%homeDivWidth {
+  max-width: 50%;
+  min-width: 300px;
+}
+
+%buttonPositioning {
+  float: left;
+  width: 45%;
+  text-align: center;
+}
+
+%iconButton {
+  background-repeat: no-repeat;
+  padding-left: 40px;
+}
+
+.homeLinks {
+  @extend %homeDivWidth;
+  margin:0 auto;
+  min-width: 400px;
+  width: 400px;
+  .signup {
+    @extend %buttonPositioning;
+  }
+  .login {
+    @extend %buttonPositioning;
+  }
+}
