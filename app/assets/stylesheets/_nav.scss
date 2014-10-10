@@ -1,0 +1,32 @@
+.nav {
+  @extend %borderRight;
+  float: left;
+  max-width: 30%;
+  min-width: 200px;
+  height: 400px;
+}
+
+a {
+  text-decoration: none;
+  border-bottom: 2px $teal dotted;
+  color: $teal;
+}
+
+ul {
+  text-align: left;
+  list-style: none;
+  vertical-align: middle;
+  margin: 20 0 0 -20px;
+}
+
+li {
+  
+  margin: 10px 30px 0 -10px;
+  padding: 5px 20px 10px 30px;
+  background-image: url('Round-button.png');
+  background-repeat: no-repeat;
+  height: 15px;
+  
+}
+
+

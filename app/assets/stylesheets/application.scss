@@ -1,9 +1,8 @@
-$gray: #F5F5F5;
-$teal: #54B1C4;
-$orange: #FF8636;
-$dark: #515150;
-
-$font: Helvetica, arial, sans-serif;
+@import "normalize";
+@import "settings";
+@import "scaffolds";
+@import "nav";
+@import "layout";
 
 html {
   background-color: $gray;
@@ -12,9 +11,10 @@ html {
 .clearfix:after {
    content: " "; /* Older browser do not support empty content */
    visibility: hidden;
-   display: block;
+   display: none;
    height: 0;
    clear: both;
+   visibility: hidden;
 }
 
 header {
@@ -23,18 +23,6 @@ header {
   border-color: $orange;
   border-width: 3px;
   padding-top: 20px;
-  
-    .title {
-      float: left;
-      border-style: solid;
-      border-width: 1px;
-      width: 75%;
-      h1 {
-        text-align: center;
-        font-family: $font;
-        font-size: 50px;
-      }
-    }
   
   span {
     display: none;
@@ -55,9 +43,8 @@ header {
   .logo {
     float: left;
     margin: 0 0 0 20px;
-    width: 50%;
     min-width: 100px;
-    height: 100px;
+    min-height: 100px;
     background: url('gettin-it-done-logo.png');
     background-repeat: no-repeat;
   }
@@ -65,7 +52,29 @@ header {
 
 .content {
   min-height: 400px;
-  padding: 20px 0 0 20px;
+  margin: 0 0 0 20px;
+}
+
+.title {
+  text-align: center;
+  padding-top: 50px;
+}
+
+.about {
+  margin: 50px auto 50px;
+  max-width: 50%;
+  min-width: 400px;
+  line-height: 25px;
+}
+
+.currentMoment {
+  padding-left: 20px;
+  float: left;
+}
+
+.createMoment {
+  padding-left: 20px;
+  float: left;
 }
 
 footer {
@@ -75,19 +84,18 @@ footer {
   border-width: 3px;
 }
 
-body, table th, table td {
+body, 
+table th, 
+table td {
   font-family: $font;
   color: $dark;
 }
 
-table th, table td {
+table th, 
+table td {
   padding: 10px;
 }
 
-a {
-  text-decoration: none;
-  border-bottom: 2px $teal dotted;
-  color: $teal;
-}
+
 
 

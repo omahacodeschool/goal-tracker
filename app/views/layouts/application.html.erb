@@ -11,14 +11,17 @@
   <div class="logo">
     <span>Goal Tracker</span>
   </div>
-  
-  <!-- <div class="title">
-    <h1>Goal-Tracker</h1>
-  </div> -->
+
+  <% if flash[:notice] || flash[:alert] %>
+  <div class="messages">
+    <p id="notice"><%= flash[:notice] %></p>
+    <p id="alert"><%= flash[:alert] %></p>
+  </div>
+  <% end %>
 
   <div id="nav">
     <% if current_user %>
-      <p><%= link_to "Edit Profile", edit_user_path(current_user.id) %> |</p>
+      <p><%= link_to "Dashboard", dashboard_path %> |</p>
       <p><%= link_to "Logout", :logout, method: :post %></p>
     <% else %>
       <p><%= link_to "Register", new_user_path %> |</p>
@@ -27,12 +30,8 @@
   </div>
   
 </header>
-  <body>
-    <div>
-      <p id="notice"><%= flash[:notice] %></p>
-      <p id="alert"><%= flash[:alert] %></p>
-    </div>
-    <div class="content">
+  <body> 
+    <div class="content clearfix">
 
       <%= yield %>
     

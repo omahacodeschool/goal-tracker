@@ -1,0 +1,36 @@
+.messages {
+  float: left;
+  text-align: center;
+}
+#notice {
+  color: #54B1C4;
+}
+
+.field_with_errors {
+  padding: 2px;
+  background-color: #515150;
+  display: table;
+}
+
+#error_explanation {
+  width: 450px;
+  border: 2px solid #FF8636;
+  padding: 7px;
+  padding-bottom: 0;
+  margin-bottom: 20px;
+  background-color: #515150;
+  h2 {
+    text-align: left;
+    font-weight: bold;
+    padding: 5px 5px 5px 15px;
+    font-size: 12px;
+    margin: -7px;
+    margin-bottom: 0px;
+    background-color: #c00;
+    color: #fff;
+  }
+  ul li {
+    font-size: 12px;
+    list-style: square;
+  }
+}
