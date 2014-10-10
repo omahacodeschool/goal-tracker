@@ -16,6 +16,8 @@ class GoalsController < ApplicationController
     @goals = Goal.all
     @goal = Goal.find_by_id(params[:id])
     @moment = Moment.new
+    
+    binding.pry
 
     respond_to do |format|
       format.html # show.html.erb
