@@ -15,6 +15,7 @@ class GoalsController < ApplicationController
   def show
     @goals = Goal.all
     @goal = Goal.find_by_id(params[:id])
+    @goal.goal_completed?(@goal)
     @moment = Moment.new
     
     respond_to do |format|
