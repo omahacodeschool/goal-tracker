@@ -12,6 +12,9 @@ a {
   color: $teal;
 }
 
+ 
+
+
 ul {
   text-align: left;
   list-style: none;
@@ -26,7 +29,10 @@ li {
   background-image: url('Round-button.png');
   background-repeat: no-repeat;
   height: 15px;
+}
 
+li:hover{
+ background-image: url('Round-button-pushed.png'); 
 }
 
 
