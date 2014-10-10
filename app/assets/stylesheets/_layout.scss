@@ -14,6 +14,11 @@
   padding-left: 40px;
 }
 
+%borderRight {
+  border-right: solid;
+  border-color: $orange;
+}
+
 .homeLinks {
   @extend %homeDivWidth;
   margin:0 auto;
@@ -26,3 +31,17 @@
     @extend %buttonPositioning;
   }
 }
+
+.chart {
+  @extend %borderRight;
+  float: left;
+  width: 50%;
+  height: 400px;
+}
+
+.moments {
+  float: left;
+  width: 20%;
+  height: 400px;
+}
+

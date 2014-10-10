@@ -13,6 +13,7 @@ class GoalsController < ApplicationController
   # GET /goals/1
   # GET /goals/1.json
   def show
+    @goals = Goal.all
     @goal = Goal.find_by_id(params[:id])
     @moment = Moment.new
 

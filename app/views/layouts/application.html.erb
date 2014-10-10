@@ -12,9 +12,12 @@
     <span>Goal Tracker</span>
   </div>
   
-  <!-- <div class="title">
-    <h1>Goal-Tracker</h1>
-  </div> -->
+  <% if flash[:notice] || flash[:alert] %>
+  <div class="messages">
+    <p id="notice"><%= flash[:notice] %></p>
+    <p id="alert"><%= flash[:alert] %></p>
+  </div>
+  <% end %>
 
   <div id="nav">
     <% if current_user %>
@@ -27,12 +30,7 @@
   </div>
   
 </header>
-  <body>
-    <div class="messages">
-      <p id="notice"><%= flash[:notice] %></p>
-      <p id="alert"><%= flash[:alert] %></p>
-    </div>
-    
+  <body> 
     <div class="content clearfix">
 
       <%= yield %>

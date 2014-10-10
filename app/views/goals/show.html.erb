@@ -1,3 +1,11 @@
+<div class="nav">
+  <ul>
+    <% @goals.each do |g| %>
+      <li><%= link_to g.title, goal_path(g.id) %></li>
+    <% end %>
+  </ul>
+</div>
+
 <div class="currentMoment">
   <p>
     <span>Title:</span> <%= @goal.title %>
@@ -26,9 +34,11 @@
   </p>
   <%= f.submit %>
 <% end %>
-</div>
 
 <p>
  <%= link_to 'Edit', edit_goal_path(@goal) %> |
  <%= link_to 'Back', goals_path %> 
 </p>
+</div>
+
+

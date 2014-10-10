@@ -11,9 +11,10 @@ html {
 .clearfix:after {
    content: " "; /* Older browser do not support empty content */
    visibility: hidden;
-   display: block;
+   display: none;
    height: 0;
    clear: both;
+   visibility: hidden;
 }
 
 header {
@@ -63,7 +64,6 @@ header {
 
 .content {
   min-height: 400px;
-  padding: 20px 0 0 20px;
 }
 
 .title {
@@ -75,6 +75,16 @@ header {
   max-width: 50%;
   min-width: 400px;
   line-height: 25px;
+}
+
+.currentMoment {
+  padding-left: 20px;
+  float: left;
+}
+
+.createMoment {
+  padding-left: 20px;
+  float: left;
 }
 
 footer {
