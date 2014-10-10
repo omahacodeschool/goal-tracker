@@ -9,13 +9,17 @@ class Goal < ActiveRecord::Base
     Time.now - self.moments.last.created_at    
   end
   
+  def time_since
+    self.check_time / 60
+  end
+  
   def self.check_for_laziness
     goals = Goal.all
     goals.each do |g|
       user = User.find_by_id(g.user_id)
       binding.pry
       if g.moments.length >= 1
-        if g.check_time > 300
+        if g.check_time >= 300
           TrackerMailer.delay.welcome(user)
         end
       else
