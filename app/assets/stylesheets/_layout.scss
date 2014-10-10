@@ -1,0 +1,47 @@
+%homeDivWidth {
+  max-width: 50%;
+  min-width: 300px;
+}
+
+%buttonPositioning {
+  float: left;
+  width: 45%;
+  text-align: center;
+}
+
+%iconButton {
+  background-repeat: no-repeat;
+  padding-left: 40px;
+}
+
+%borderRight {
+  border-right: solid;
+  border-color: $orange;
+}
+
+.homeLinks {
+  @extend %homeDivWidth;
+  margin:0 auto;
+  min-width: 400px;
+  width: 400px;
+  .signup {
+    @extend %buttonPositioning;
+  }
+  .login {
+    @extend %buttonPositioning;
+  }
+}
+
+.chart {
+  @extend %borderRight;
+  float: left;
+  width: 50%;
+  height: 400px;
+}
+
+.moments {
+  float: left;
+  width: 20%;
+  height: 400px;
+}
+

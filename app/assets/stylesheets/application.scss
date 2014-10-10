@@ -1,0 +1,111 @@
+@import "normalize";
+@import "settings";
+@import "scaffolds";
+@import "nav";
+@import "layout";
+
+html {
+  background-color: $gray;
+}
+
+.clearfix:after {
+   content: " "; /* Older browser do not support empty content */
+   visibility: hidden;
+   display: none;
+   height: 0;
+   clear: both;
+   visibility: hidden;
+}
+
+header {
+  height: 130px;
+  border-bottom: solid;
+  border-color: $orange;
+  border-width: 3px;
+  padding-top: 20px;
+  
+    .title {
+      float: left;
+      border-style: solid;
+      border-width: 1px;
+      width: 75%;
+      h1 {
+        text-align: center;
+        font-family: $font;
+        font-size: 50px;
+      }
+    }
+  
+  span {
+    display: none;
+  }
+  
+  #nav {
+    text-align: left;
+    float: right;
+    margin: 0 20px 0 0;
+    min-width: 100px;
+    max-width: 50%;
+    padding: 0 10px 0 0;
+    p {
+      display: inline;
+    }
+  }
+  
+  .logo {
+    float: left;
+    margin: 0 0 0 20px;
+    min-width: 100px;
+    min-height: 100px;
+    background: url('gettin-it-done-logo.png');
+    background-repeat: no-repeat;
+  }
+}
+
+.content {
+  min-height: 400px;
+}
+
+.title {
+  text-align: center;
+}
+
+.about {
+  margin: 50px auto 50px;
+  max-width: 50%;
+  min-width: 400px;
+  line-height: 25px;
+}
+
+.currentMoment {
+  padding-left: 20px;
+  float: left;
+}
+
+.createMoment {
+  padding-left: 20px;
+  float: left;
+}
+
+footer {
+  height: 100px;
+  border-top: solid;
+  border-color: $orange;
+  border-width: 3px;
+}
+
+body, 
+table th, 
+table td {
+  font-family: $font;
+  color: $dark;
+}
+
+table th, 
+table td {
+  padding: 10px;
+}
+
+
+
+

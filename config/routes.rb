@@ -1,6 +1,8 @@
 GoalTracker::Application.routes.draw do
 
   root :to => 'pages#index'
+  
+  get 'dashboard' => 'pages#dashboard'
 
   resources :user_sessions
 
@@ -13,8 +15,6 @@ GoalTracker::Application.routes.draw do
   resources :users
   
   resources :goals
-  
-  post "moments/in_goal" => 'moments#create_in_goal'
   
   get "moments" => 'moments#index', :as => "moments"
   
@@ -31,7 +31,7 @@ GoalTracker::Application.routes.draw do
   get 'login' => 'user_sessions#new', :as => :login
   post 'logout' => 'user_sessions#destroy', :as => :logout
 
-  
+  match "/delayed_job" => DelayedJobWeb, :anchor => false, via: [:get, :post]
 
 
 

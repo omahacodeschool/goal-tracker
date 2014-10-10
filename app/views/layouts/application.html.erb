@@ -9,30 +9,33 @@
 
 <header class="clearfix">
   <div class="logo">
-  </div>
-
-  <%= session %><br />
-
-  <div id="nav">
-    <% if current_user %>
-      <%= link_to "Edit Profile", edit_user_path(current_user.id) %>
-      <%= link_to "Logout", :logout, method: :post %>
-    <% else %>
-      <%= link_to "Register", new_user_path %> |
-      <%= link_to "Login", :login %>
-    <% end %>
+    <span>Goal Tracker</span>
   </div>
   
-  <div>
+  <% if flash[:notice] || flash[:alert] %>
+  <div class="messages">
     <p id="notice"><%= flash[:notice] %></p>
     <p id="alert"><%= flash[:alert] %></p>
   </div>
+  <% end %>
+
+  <div id="nav">
+    <% if current_user %>
+      <p><%= link_to "Dashboard", dashboard_path(current_user) %> |</p>
+      <p><%= link_to "Logout", :logout, method: :post %></p>
+    <% else %>
+      <p><%= link_to "Register", new_user_path %> |</p>
+      <p><%= link_to "Login", :login %></p>
+    <% end %>
+  </div>
   
 </header>
-  <body>
+  <body> 
+    <div class="content clearfix">
 
-    <%= yield %>
-
+      <%= yield %>
+    
+    </div>
   </body>
 
 <footer>  
