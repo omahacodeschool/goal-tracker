@@ -42,6 +42,6 @@
 </p>
 </div>
 
-<div data-logs="<%= @json_data %>" id="json_data">
+<%= content_tag :div, "", id: "chart", data: {moments: @moments} %>
 </div>
 

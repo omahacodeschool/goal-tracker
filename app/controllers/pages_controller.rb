@@ -7,7 +7,7 @@ class PagesController < ApplicationController
   def dashboard
     @goals = Goal.all
     @goal = Goal.find_by_id(params[:id])
-    # @moments = Goal.moments
+    @moments = Moment.all
     @moment = Moment.new
     
     respond_to do |format|
