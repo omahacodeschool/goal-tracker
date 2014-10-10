@@ -13,7 +13,6 @@ class GoalsController < ApplicationController
   # GET /goals/1
   # GET /goals/1.json
   def show
-    @goal.goal_completed?(@goal)
     @goals = Goal.all
     @goal = Goal.find_by_id(params[:id])
     @goal.goal_completed?(@goal)
@@ -33,7 +32,6 @@ class GoalsController < ApplicationController
 
     respond_to do |format|
       format.html # new.html.erb
-      binding.pry
       format.json { render json: @goal }
     end
   end
