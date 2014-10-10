@@ -74,7 +74,11 @@ class UsersController < ApplicationController
   # DELETE /users/1.json
   def destroy
     @user = User.find(params[:id])
+    @goal = Goal.find(user_id: @user.id)
+    @moment = Moment.find(goal_id: @goal.id)
     @user.destroy
+    @goal.destroy
+    @moment.destroy
     logout
 
     respond_to do |format|
