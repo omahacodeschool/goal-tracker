@@ -15,10 +15,9 @@ class GoalsController < ApplicationController
   def show
     @goals = Goal.all
     @goal = Goal.find_by_id(params[:id])
+    @goal.goal_completed?(@goal)
     @moment = Moment.new
     
-    binding.pry
-
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @goal }

@@ -15,6 +15,7 @@ class MomentsController < ApplicationController
     
     if @moment.save
       redirect_to goal_path(@moment.goal_id)
+      @moment.accumulating_value(@moment)
     else
       render goal_path(params[:goal_id])
     end
