@@ -21,7 +21,7 @@
 
   <div id="nav">
     <% if current_user %>
-      <p><%= link_to "Dashboard", dashboard_path(current_user.id) %> |</p>
+      <p><%= link_to "Dashboard", dashboard_path(current_user) %> |</p>
       <p><%= link_to "Logout", :logout, method: :post %></p>
     <% else %>
       <p><%= link_to "Register", new_user_path %> |</p>
