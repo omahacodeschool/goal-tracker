@@ -1,0 +1,6 @@
+$('#new_moment').remove();
+$('.new_moment_link').show();
+
+
+
+$("<%= escape_javascript(render @moment) %>").appendTo("#moments");
