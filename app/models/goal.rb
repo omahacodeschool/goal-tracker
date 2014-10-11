@@ -17,6 +17,10 @@ class Goal < ActiveRecord::Base
     Time.now - self.moments.last.created_at    
   end
   
+  def time_since
+    self.check_time / 60
+  end
+
   # Internal: Determines whether user needs an email notification of goal inactivity and sends email if too much time has lapsed; checks every Goal for a User
   #
   # time_in_seconds - the maximum amount of seconds to pass since creation of Moment for a Goal
