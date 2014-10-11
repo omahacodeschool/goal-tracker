@@ -7,7 +7,7 @@ class PagesController < ApplicationController
   def dashboard
     @goals = current_user.goals
     @goal = Goal.find_by_id(params[:id])
-    #@moments = @goal.moments
+    @moments = Moment.all
     @moment = Moment.new
     binding.pry
     
