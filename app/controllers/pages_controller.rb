@@ -5,10 +5,11 @@ class PagesController < ApplicationController
   end
   
   def dashboard
-    @goals = Goal.all
+    @goals = current_user.goals
     @goal = Goal.find_by_id(params[:id])
-    # @moments = Goal.moments
+    #@moments = @goal.moments
     @moment = Moment.new
+    binding.pry
     
     respond_to do |format|
       format.html 

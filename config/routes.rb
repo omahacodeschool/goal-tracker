@@ -18,7 +18,7 @@ GoalTracker::Application.routes.draw do
   
   get "moments" => 'moments#index', :as => "moments"
   
-  get "moments/new"
+  get "moments/new" => 'moments#new', :as => "new_moment"
 
   post "moments" => 'moments#create'
 
