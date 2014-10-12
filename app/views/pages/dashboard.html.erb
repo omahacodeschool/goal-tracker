@@ -1,7 +1,6 @@
 <div class="nav">
   <ul>
     <% @goals.each do |g| %>
-    g.moments
       <li><%= link_to g.title, goal_path(g.id) %></li>
     <% end %>
   </ul>

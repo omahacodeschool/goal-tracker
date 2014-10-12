@@ -5,7 +5,7 @@ $(".logo").click(function(){
        return false;
    });
    
-   new Morris.Line({
+  new Morris.Bar({
     // ID of the element in which to draw the chart.
     element: 'chart',
     // Chart data records -- each entry in this array corresponds to a point on
