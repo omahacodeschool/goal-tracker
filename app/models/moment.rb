@@ -4,6 +4,7 @@ class Moment < ActiveRecord::Base
   belongs_to :goal
   validates :moment_value, presence: true
   
+  
   def accumulating_value(moment)
     goal = moment.goal
     accum_value = goal.moments.sum(:moment_value)

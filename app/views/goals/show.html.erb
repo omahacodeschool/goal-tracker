@@ -6,6 +6,23 @@
   </ul>
 </div>
 
+<div>
+  <%= content_tag :div, "", id: "chart", data: {moments: @moments} %>
+</div>
+
+<div class="createMoment">
+  <p><span>Create Moment</span></p>
+  <%= form_for @moment do |f| %>
+
+    <p>
+      <%= f.label :moment_value %>
+      <%= f.number_field :moment_value %>
+      <%= f.hidden_field :goal_id, {:value => @goal.id}%>
+    </p>
+    <%= f.submit %>
+  <% end %>
+</div>
+
 <div class="currentMoment">
   <p>
     <span>Title:</span> <%= @goal.title %>
@@ -24,24 +41,12 @@
 </div>
 
 
-<div class="createMoment">
-<p><span>Create Moment</span></p>
-<%= form_for @moment do |f| %>
-
   <p>
-    <%= f.label :moment_value %>
-    <%= f.number_field :moment_value %>
-    <%= f.hidden_field :goal_id, {:value => @goal.id}%>
+    <%= link_to 'Edit', edit_goal_path(@goal) %> |
+    <%= link_to 'Back', goals_path %> 
   </p>
-  <%= f.submit %>
-<% end %>
 
-<p>
- <%= link_to 'Edit', edit_goal_path(@goal) %> |
- <%= link_to 'Back', goals_path %> 
-</p>
-</div>
 
-<%= content_tag :div, "", id: "chart", data: {moments: @moments} %>
-</div>
+
+
 

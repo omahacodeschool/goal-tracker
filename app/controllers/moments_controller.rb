@@ -6,6 +6,11 @@ class MomentsController < ApplicationController
   
   def new
     @moment = Moment.new
+    
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   def create

@@ -10,17 +10,11 @@
 <%= content_tag :div, " ", id: "chart", data: {moments: @moments} %>
 
 <div id="chart" >
+  <%= content_tag :div, " ", id: "chart", data: {moments: @moments} %>
   
 </div>
 
 <div class="moments">
-  <%= link_to "Add Moment", new_moment_path, class: "new_moment_link", remote: true %>
-  
-  <ul class="moments_list">
-    
-  </ul>
-  
-<%= content_tag :div, " ", id: "chart", data: {moments: @moments} %>
 
 </div>
 

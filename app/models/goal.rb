@@ -47,6 +47,35 @@ class Goal < ActiveRecord::Base
     return email_list
   end
   
+  def momentum
+    if self.moments.length > 0
+      self.moments.sum(:moments_value)
+    else
+      0
+    end
+  end
+  
+  def percent_completed
+    if self.momentum >= self.goal_value
+      100
+    else
+      (self.momentum*100)/self.goal_value
+    end
+  end
+
+  #   if self.moments.last > 0
+  #     accumulated=self.moments.last.accum_value
+  #   else
+  #     accumulated=0
+  #   end
+  #   total=self.goal_value
+  #   if accumulated >= total
+  #     100
+  #   else
+  #     (accumulated*100)/total
+  #   end
+  # end
+  
   def goal_reached?(goal)
     if goal.moments.sum(:moment_value) >= goal.goal_value
       true
