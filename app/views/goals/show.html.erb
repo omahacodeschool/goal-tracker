@@ -6,9 +6,8 @@
   </ul>
 </div>
 
-<div>
-  <%= content_tag :div, "", id: "chart", data: {moments: @moments} %>
-</div>
+
+<%= content_tag :div, "", id: "showChart", data: {moments: @moments} %>
 
 <div class="createMoment">
   <p><span>Create Moment</span></p>
@@ -34,17 +33,14 @@
 
   <% if @goal.moments.length > 0 %>
     <span>Moments</span>
-    <% @goal.moments.reverse.each do |m| %>  <!-- descending -->
+    <% @goal.moments.reverse.first(5).each do |m| %>  <!-- descending -->
       <p><%= m.moment_value %> - <%= m.created_at %></p>
     <% end %>
   <% end %>
 </div>
 
 
-  <p>
-    <%= link_to 'Edit', edit_goal_path(@goal) %> |
-    <%= link_to 'Back', goals_path %> 
-  </p>
+  
 
 
 
