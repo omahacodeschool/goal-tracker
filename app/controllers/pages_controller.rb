@@ -9,7 +9,6 @@ class PagesController < ApplicationController
     @goal = Goal.find_by_id(params[:id])
     @moments = Moment.all
     @moment = Moment.new
-    binding.pry
     
     respond_to do |format|
       format.html 

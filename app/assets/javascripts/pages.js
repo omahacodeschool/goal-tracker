@@ -1,5 +1,3 @@
-
-
 $(document).ready(function () {
    
   new Morris.Bar({
@@ -14,7 +12,19 @@ $(document).ready(function () {
     // chart.
     ykeys: ["accum_value"],
     // The name of the data record attribute that contains x-values.
-    labels: ['Value']
+    labels: ['Value'],
+    
+    barColors: ['#FF8636'],
+    
+    hideHover: 'auto',
+    
+    gridTextColor: ['#54B1C4'],
+    
+    gridTextFamily: ['Helvetica, sans-serif'],
+    
+    gridFontWeight: ['light'],
+    
+    resize: 'true'
   });
   
 });
